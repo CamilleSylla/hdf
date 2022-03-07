@@ -10,11 +10,9 @@ import {
 import MapStyle from "../contact/MapStyle";
 import { useCallback, useRef, useState } from "react";
 import Button from "../../template/button/Button";
+import axios from "axios";
 
-const center = {
-  lat: 48.01065361417526,
-  lng: 0.18221582879658224,
-};
+const center = { lat: 49.84640501614155, lng: 3.28532369816711 };
 const apiKey =
   process.env.GMAP_API || "AIzaSyDbCf9rd6UXkL_DGwsb-5b_IN7i7Y3bULo";
 const mapContainerStyle = {
@@ -43,18 +41,33 @@ export default function Contact() {
       <section className={style.map}>
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
-          zoom={14}
+          zoom={15}
           center={center}
           onLoad={onMapLoad}
           options={options}
         >
           <Marker
-            position={{ lat: 48.01065361417526, lng: 0.18221582879658224 }}
+            position={{ lat: 49.84640501614155, lng: 3.28532369816711 }}
           />
         </GoogleMap>
       </section>
     );
   };
+
+  const transport = {}
+
+  const Send = async () => {
+    const send = axios.post('/api/contact', transport)
+    .then(res => {
+      if (res.status === 200) {
+        alert("Succes")
+      } else {
+        alert("Error")
+      }
+    })
+    
+    
+  }
 
   const Form = () => {
 
@@ -63,11 +76,13 @@ export default function Contact() {
 
             <div className={style.container}>
             <h1>Contactez-nous !</h1>
-            <input type="text" placeholder="Nom et prénom"/>
-            <input type="tel" placeholder="N° de téléphone"/>
-            <input type="email" placeholder="Adresse e-mail"/>
-            <textarea placeholder="Votre message"/>
+            <input type="text" placeholder="Nom et prénom" onChange={e => transport.nom = e.target.value}/>
+            <input type="tel" placeholder="N° de téléphone" onChange={e => transport.phone = e.target.value}/>
+            <input type="email" placeholder="Adresse e-mail" onChange={e => transport.email = e.target.value}/>
+            <textarea placeholder="Votre message" onChange={e => transport.msg = e.target.value}/>
+            <div onClick={Send}>
             <Button title="Envoyer" />
+            </div>
             </div>
 
         </article>

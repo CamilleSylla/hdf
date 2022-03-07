@@ -1,5 +1,6 @@
 import Section from "../../template/section/Section";
 import SectionWidth from "../../template/sectionWidth/SectionWidth";
+import Agrs from "../whyus/Args/Args";
 import style from "./about.module.scss";
 
 
@@ -20,13 +21,12 @@ export default function About() {
   };
   
   return (
-    <Section>
-      <SectionWidth>
-      <div className={style.wrapper}>
-      <img src="/assets/logo/Logo.svg" />
-        <About />
-      </div>
-      </SectionWidth>
-    </Section>
+    <Agrs span="" title="A Propos" desc="Après un diagnostic, nous réalisons des devis de travaux par nos artisans
+    locaux partenaire et nous nous occupons de toute les demandes de
+    subventions.
+    Afin de vous donner un reste à charge très attractif
+    Nous vous facilitons votre transition énergétique dans chacune de ses
+    étapes et permettons aux particuliers et aux professionnels d’économiser du
+    temps, de l’argent et de l’énergie." index={3} imgSrc="/Logo.svg"/>
   );
 }

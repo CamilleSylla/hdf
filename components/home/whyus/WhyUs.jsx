@@ -24,7 +24,7 @@ export default function WhyUS () {
         <>
         {content.map((el, i) => {
             return (
-                <Agrs key={i} title={el.title} index={i} imgSrc={el.img} desc={el.content}/>
+                <Agrs span="Pourquoi HDF ?" key={i} title={el.title} index={i} imgSrc={el.img} desc={el.content}/>
             )
         })}
         </>

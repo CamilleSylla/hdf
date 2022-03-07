@@ -2,7 +2,7 @@ import style from "./args.module.scss";
 import Section from "../../../template/section/Section";
 import SectionWidth from "../../../template/sectionWidth/SectionWidth";
 
-export default function Agrs({ title, imgSrc, desc, index }) {
+export default function Agrs({ title,span, imgSrc, desc, index }) {
   const Img = () => {
     return <img src={`/assets/illustrations${imgSrc}`} />;
   };
@@ -10,7 +10,7 @@ export default function Agrs({ title, imgSrc, desc, index }) {
   const Content = () => {
     return (
       <article className={style.content}>
-          <span>Pourquoi HDF ?</span>
+          <span>{span}</span>
         <h1>{title}</h1>
         <p>{desc}</p>
       </article>

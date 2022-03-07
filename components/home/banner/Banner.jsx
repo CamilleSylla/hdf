@@ -10,7 +10,7 @@ export default function Banner() {
           <div className={style.header}>
             <h1>Vous faire accompagner par l'expert de l'habitat en France</h1>
             <p>
-              HDF une entreprise des Haut-de-France qui est spécialisé dans le
+              HDF une entreprise des Haut-de-France qui est spécialisée dans le
               conseil en rénovation énergétique pour les professionnels
               et les particuliers.
             </p>

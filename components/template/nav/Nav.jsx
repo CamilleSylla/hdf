@@ -7,7 +7,6 @@ export default function Nav () {
             <div className={style.container}>
                 <img src='/assets/logo/Logo.svg'/>
                 <ul>
-                    <li>Accueil</li>
                     <li>Services</li>
                     <li>Pourquoi HDF ?</li>
                     <li>A propos</li>

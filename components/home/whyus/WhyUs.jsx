@@ -1,4 +1,4 @@
-import Agrs from "./Args/Args";
+import Agrs from "./Args/Args.jsx";
 
 const content = [
     {

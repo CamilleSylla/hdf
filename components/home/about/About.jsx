@@ -1,6 +1,6 @@
 import Section from "../../template/section/Section";
 import SectionWidth from "../../template/sectionWidth/SectionWidth";
-import Agrs from "../whyus/Args/Args";
+import Agrs from "../whyus/Args/Args.jsx";
 import style from "./about.module.scss";
 
 

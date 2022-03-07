@@ -48,7 +48,7 @@ export default function Services() {
             color: "var(--primary-color)",
           }}
         >
-          Nos domaines d'intervention
+          {"Nos domaines d'intervention"}
         </h1>
         <div className={style.container}>
           <Icons imgSrc="/assets/icons/wall.svg" title="isolation" />

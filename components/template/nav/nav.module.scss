@@ -1,0 +1,32 @@
+.nav {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    .container {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            height: 80%;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                color: var(--secondary-color);
+                padding: 0 2vw 0 2vw;
+                transition: all ease .5s;
+                &:hover {
+                    cursor: pointer;
+                    color: var(--third-color);
+                }
+            }
+        }
+    }
+}

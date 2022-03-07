@@ -1,0 +1,20 @@
+.wrapper {
+    padding:2vh 2vw 2vh 2vw ;
+    text-transform: uppercase;
+    align-self: flex-start;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+color: #F2F2F2;
+margin: 5vh 0 2vh 0;
+cursor: pointer;
+border: 2.5px solid transparent;
+transition: all ease .5s;
+background: var(--third-color);
+&:hover {
+    background: var(--primary-color);
+    border: 2.5px solid var(--third-color);
+    color: var(--third-color);
+}
+}

@@ -29,3 +29,9 @@ textarea, input {
     background: transparent;
     border-bottom: #50529F 2px solid;
 }
+
+@media (max-width: 991.98px) {
+    html,body {
+        font-size: 3.75vw;
+    }
+}

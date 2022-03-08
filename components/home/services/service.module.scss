@@ -32,3 +32,25 @@
     }
 
 }
+
+@media (max-width: 991.98px) {
+    .wrapper {
+        height: auto;
+        .container {
+            flex-direction: column;
+            .card {
+                width: 40vw;
+                padding: 0 0 5vh 0;
+                h1 {
+                    text-align: center;
+                }
+                .icon {
+                    width: 40vw;
+                    height: 40vw;
+    
+                }
+            }
+        }
+    }
+    
+  }

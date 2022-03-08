@@ -1,12 +1,14 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { NavContext } from '../../context/NavContext'
 import style from './nav.module.scss'
 
 export default function Nav () {
 
     const [nav, setNav] = useContext(NavContext)
+    const [menu, setMenu] = useState(false)
+    const menuRef = useRef()
     const navRef = useRef()
 
     useEffect(() => {
@@ -24,7 +26,15 @@ export default function Nav () {
                 }
             })
         }
-    }, [nav])
+
+        if (window.matchMedia("(max-width: 991.98px)").matches) {
+            if (menu === true) {
+                menuRef.current.style.opacity = 1
+            } else {
+                menuRef.current.style.opacity = 0
+            }
+        }
+    }, [nav, menu])
 
     const ScrollTo = (section) => {
         nav[section].current.scrollIntoView()
@@ -34,7 +44,10 @@ export default function Nav () {
         <nav ref={navRef} className={style.nav}>
             <div className={style.container}>
                 <img src='/assets/logo/Logo.svg'/>
-                <ul>
+                <div onClick={() => setMenu(!menu)} className={style.hamburger}>
+                   {menu === false ? <img className={style.ham_img} src="/assets/icons/hamburger.svg"/> : <img className={style.cross_img} src="/assets/icons/cross.svg"/>} 
+                </div>
+                <ul ref={menuRef}>
                     <li onClick={() => ScrollTo("services")} >Services</li>
                     <li onClick={() => ScrollTo("whyus")} >Pourquoi HDF ?</li>
                     <li onClick={() => ScrollTo("about")}>A propos</li>

@@ -41,6 +41,11 @@
     .nav {
         .container {
             position: relative;
+            width: 100%;
+            color: var(--third-color);
+            img {
+                padding: 0 10vw 0 10vw;
+            }
             .hamburger {
                 height: 100%;
                 display: flex;
@@ -60,6 +65,7 @@
                 flex-direction: column;
                 top: 100%;
                 width: 100%;
+                right: 0;
                 height: auto;
                 border-bottom: 2px solid var(--third-color);
                 li {

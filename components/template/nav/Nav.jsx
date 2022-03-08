@@ -13,6 +13,7 @@ export default function Nav () {
 
     useEffect(() => {
         if (nav.services ) {
+            if (window.matchMedia("(min-width: 991.98px)").matches) {
             gsap.registerPlugin(ScrollTrigger)
             gsap.from(navRef.current, {
                 background : "transparent",
@@ -25,6 +26,7 @@ export default function Nav () {
                     scrub : 1
                 }
             })
+        }
         }
 
         if (window.matchMedia("(max-width: 991.98px)").matches) {

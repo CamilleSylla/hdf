@@ -8,9 +8,10 @@ import {
   useLoadScript,
 } from "@react-google-maps/api";
 import MapStyle from "../contact/MapStyle";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import Button from "../../template/button/Button";
 import axios from "axios";
+import { NavContext } from "../../context/NavContext";
 
 const center = { lat: 49.84640501614155, lng: 3.28532369816711 };
 const apiKey =
@@ -24,6 +25,8 @@ const options = {
 };
 
 export default function Contact() {
+  const [nav, setNav] = useContext(NavContext)
+  const contactRef = useRef()
   const [map, setMap] = useState(null);
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
@@ -90,9 +93,13 @@ export default function Contact() {
     )
   }
 
+  useEffect(() => {
+    setNav({...nav, contact : contactRef})
+  },[])
+
   return (
     <Section>
-        <div className={style.wrapper}>
+        <div ref={contactRef} className={style.wrapper}>
           <Map />
           <Form/>
           {/* <About /> */}

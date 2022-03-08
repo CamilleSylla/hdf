@@ -43,17 +43,17 @@ export default function Agrs({ title,span, imgSrc, desc, index }) {
         y: 50
       });
       // just get the <p> elements inside this <div>
+      // tl.to(gsap.utils.toArray("h1", div).concat(p), {
+      //   autoAlpha: 0,
+      //   y: 50,
+      //   stagger: 0.2,
+      //   ease: "power1.in"
+      // });
       let p = gsap.utils.toArray("p", div);
       tl.from(p, {
         autoAlpha: 0,
         y: 50,
         stagger: 0.2
-      });
-      tl.to(gsap.utils.toArray("h1", div).concat(p), {
-        autoAlpha: 0,
-        y: -50,
-        stagger: 0.2,
-        ease: "power1.in"
       });
     });
 

@@ -22,7 +22,7 @@ export default function Banner() {
               conseil en rénovation énergétique pour les professionnels
               et les particuliers.
             </p>
-            <Button title="Nos Services"/>
+            <Button title="Contact"/>
           </div>
         </SectionWidth>
         <img ref={illustration} src="/assets/illustrations/banner.svg" alt="HDF - Banniere" />

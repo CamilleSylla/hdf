@@ -1,10 +1,12 @@
 import gsap from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { NavContext } from "../../context/NavContext";
 import SectionWidth from "../../template/sectionWidth/SectionWidth";
 import style from "./service.module.scss";
 
 export default function Services() {
+  const [nav, setNav] = useContext(NavContext)
   const startAnimate = useRef();
   const iconsAnimate = useRef();
 
@@ -26,17 +28,19 @@ export default function Services() {
         trigger: startAnimate.current,
         start: "top+=20% bottom",
         end: "bottom-=20% top",
-        markers : true,
+        scrub: 1,
       },
     });
-    tl.from("article", {
-      x: "-50%",
-      opacity: 0,
-      autoAlpha: 0,
-      duration: 1,
-      stagger: 0.25,
-    });
-  }, []);
+    // tl.from("article", {
+    //   x: "-50%",
+    //   opacity: 0,
+    //   duration: 1,
+    //   stagger: 0.25,
+    // });
+    if (!nav.services){
+      setNav({...nav, services : startAnimate})
+    }
+  }, [nav]);
 
   return (
     <div ref={startAnimate} className={style.wrapper}>

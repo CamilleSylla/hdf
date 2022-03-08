@@ -1,13 +1,16 @@
-import Nav from '../components/template/nav/Nav.jsx'
-import '../styles/global.css'
+import { NavProvider } from "../components/context/NavContext.js";
+import Nav from "../components/template/nav/Nav.jsx";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Nav/>
-     <Component {...pageProps} />
+      <NavProvider>
+        <Nav />
+        <Component {...pageProps} />
+      </NavProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

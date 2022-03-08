@@ -1,3 +1,5 @@
+import { useContext, useEffect, useRef } from "react"
+import { NavContext } from "../../context/NavContext"
 import Agrs from "./args/Args"
 
 
@@ -20,14 +22,22 @@ const content = [
 ]
 
 export default function WhyUS () {
+    const [nav, setNav] = useContext(NavContext)
+    const navWhyUsRef = useRef()
 
+
+    useEffect(() => {
+        if (!nav.whyus) {
+            setNav({...nav, whyus : navWhyUsRef})
+        }
+    }, [nav])
     return (
-        <>
+        <div ref={navWhyUsRef}>
         {content.map((el, i) => {
             return (
                 <Agrs span="Pourquoi HDF ?" key={i} title={el.title} index={i} imgSrc={el.img} desc={el.content}/>
             )
         })}
-        </>
+        </div>
     )
 }
